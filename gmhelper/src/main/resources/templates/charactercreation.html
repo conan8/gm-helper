@@ -12,6 +12,9 @@
     </head>
 
     <body>
+        <script type="text/javascript" th:src="@{webjars/jquery/3.5.1/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
         <div th:include="fragments/header::header"></div>
         
         <main role="main" class="container">
@@ -21,12 +24,18 @@
             </div>
 
             <ol>
-                <li th:each="attribute : ${attributes}" th:text="${attribute.attributeName}"></li>
-            </ol>
+                <li th:each="attribute : ${attributes}" th:text="${attribute.attributeName} + ' | ' +  ${attribute.description} ">
 
+                    <ol>
+                        <li th:each="skill : ${attribute.skills}" th:text="${skill.skillName} + ' | ' +  ${skill.description} ">
+                            a
+                        </li>
+                    </ol>
+                    
+                </li>
+            </ol>
         </main>
 
-        <script type="text/javascript" th:src="@{webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
     </body>
 
 </html>
