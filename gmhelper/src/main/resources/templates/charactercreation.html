@@ -23,17 +23,27 @@
                 <h2>This is character creation page</h2>
             </div>
 
-            <ol>
-                <li th:each="attribute : ${attributes}" th:text="${attribute.attributeName} + ' | ' +  ${attribute.description} ">
+            <table>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Opis</th>
+                    <th>Umiejętności</th>
+                </tr>
+                <th:block th:each="attribute : ${attributes}">
+                    <tr>
+                        <td th:text="${attribute.attributeName}"></td>
+                        <td th:text="${attribute.description}"></td>
+                        <td>
+                            <th:block th:each="skill : ${attribute.skills}">
+                                <p th:text="${skill.skillName}"></p>
+                            </th:block>
+                        </td>
+                    </tr>           
+                </th:block>
+            </table>
 
-                    <ol>
-                        <li th:each="skill : ${attribute.skills}" th:text="${skill.skillName} + ' | ' +  ${skill.description} ">
-                            a
-                        </li>
-                    </ol>
-                    
-                </li>
-            </ol>
+            <br>
+            
         </main>
 
     </body>

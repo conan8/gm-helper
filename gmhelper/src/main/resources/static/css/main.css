@@ -18,3 +18,7 @@ h2{
 	color: blueviolet;
 	font-weight: bold;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
