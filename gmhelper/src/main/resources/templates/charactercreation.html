@@ -18,32 +18,56 @@
         <div th:include="fragments/header::header"></div>
         
         <main role="main" class="container">
-            <div class="starter-template">
-                <h1>GM Helper</h1>
-                <h2>This is character creation page</h2>
+            <div class="starter-template row">
+                <div class="col-md-12">
+                    <h1>Kreator Bohatera</h1>
+                </div>      
             </div>
 
-            <table>
-                <tr>
-                    <th>Nazwa</th>
-                    <th>Opis</th>
-                    <th>Umiejętności</th>
-                </tr>
-                <th:block th:each="attribute : ${attributes}">
-                    <tr>
-                        <td th:text="${attribute.attributeName}"></td>
-                        <td th:text="${attribute.description}"></td>
-                        <td>
-                            <th:block th:each="skill : ${attribute.skills}">
-                                <p th:text="${skill.skillName}"></p>
-                            </th:block>
-                        </td>
-                    </tr>           
-                </th:block>
-            </table>
+            <div class="character-attributes row" >
+                <div class="col-md-12">
+                    <h2>1. Cechy</h2>
+                    <table>
+                        <tr>
+                            <th>Cecha</th>
+                            <th>Mierzy</th>
+                            <th>Ważna dla</th>
+                            <th>Umiejętności</th>
+                            <th>Opis</th>
+                        </tr>
+                        <th:block th:each="attribute : ${attributes}">
+                            <tr>
+                                <td th:text="${attribute.attributeName}"></td>
+                                <td>
+                                    <th:block th:each="attributeMeasure : ${attribute.attributeMeasures}">
+                                        <p th:text="${attributeMeasure}"></p>
+                                    </th:block>
+                                </td>
+                                <td>
+                                    <th:block th:each="importantFor : ${attribute.importantFor}">
+                                        <p th:text="${importantFor}"></p>
+                                    </th:block>
+                                </td>
+                                <td>
+                                    <th:block th:each="skill : ${attribute.skills}">
+                                        <p th:text="${skill.skillName}"></p>
+                                    </th:block>
+                                </td>
+                                <td th:text="${attribute.description}"></td>
+                            </tr>           
+                        </th:block>
+                    </table>
+                    <br>
+                </div>
+            </div>
 
-            <br>
-            
+            <div class="character-race row">
+                <div class="col-md-12">
+                    <h2>1. Rasa</h2>
+                    <br>
+                </div>
+            </div>
+      
         </main>
 
     </body>
