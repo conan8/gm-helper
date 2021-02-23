@@ -49,9 +49,36 @@
                 </div>
             </div>
 
+            <div class="character-race row">
+                <div class="col-md-12">
+                    <h2>2. Klasa</h2>
+                    <table>
+                        <tr>
+                            <th>Klasa</th>
+                            <th>Opis</th>
+                            <th>KW</th>
+                            <th>Główna cecha</th>
+                            <th>BRO</th>
+                            <th>Biegłości w broni i pancerzu</th>
+                        </tr>
+                        <th:block th:each="characterclass : ${characterclasses}">
+                            <tr>
+                                <td th:text="${characterclass.className}"></td>
+                                <td th:text="${characterclass.description}"></td>
+                                <td th:text="${characterclass.kw}"></td>
+                                <td th:text="${characterclass.mainAttribute}"></td>
+                                <td th:text="${characterclass.bro}"></td>
+                                <td th:text="${characterclass.proficiency}"></td>
+                            </tr>           
+                        </th:block>
+                    </table>
+                    <br>
+                </div>
+            </div>
+
             <div class="character-attributes row" >
                 <div class="col-md-12">
-                    <h2>2. Cechy</h2>
+                    <h2>3. Cechy</h2>
                     <table>
                         <tr>
                             <th>Cecha</th>
