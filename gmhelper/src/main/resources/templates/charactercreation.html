@@ -24,9 +24,34 @@
                 </div>      
             </div>
 
+            <div class="character-race row">
+                <div class="col-md-12">
+                    <h2>1. Rasa</h2>
+                    <table>
+                        <tr>
+                            <th>Rasa</th>
+                            <th>Zwiększenie atrybutu</th>
+                            <th>Rozmiar</th>
+                            <th>Szybkość</th>
+                            <th>Języki</th>
+                        </tr>
+                        <th:block th:each="race : ${races}">
+                            <tr>
+                                <td th:text="${race.raceName}"></td>
+                                <td th:text="${race.attributeIncrease}"></td>
+                                <td th:text="${race.size}"></td>
+                                <td th:text="${race.speed}"></td>
+                                <td th:text="${race.languages}"></td>
+                            </tr>           
+                        </th:block>
+                    </table>
+                    <br>
+                </div>
+            </div>
+
             <div class="character-attributes row" >
                 <div class="col-md-12">
-                    <h2>1. Cechy</h2>
+                    <h2>2. Cechy</h2>
                     <table>
                         <tr>
                             <th>Cecha</th>
@@ -59,14 +84,7 @@
                     </table>
                     <br>
                 </div>
-            </div>
-
-            <div class="character-race row">
-                <div class="col-md-12">
-                    <h2>1. Rasa</h2>
-                    <br>
-                </div>
-            </div>
+            </div>      
       
         </main>
 
