@@ -1,37 +1,26 @@
 body {
-  padding-top: 5rem;
-
-  background-image: url("../images/image1.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  	padding-top: 5rem;
+  	background-image: url("../images/image1.jpg");
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
 }
 .starter-template {
-  padding: 1rem 1.5rem;
-  text-align: center;
-  background-color: white;
+  	padding: 1rem 1.5rem;
+ 	text-align: center;
+  	background-color: white;
 }
 
 .character-attributes, .character-race {
-  padding: 1rem 1.5rem;
-  text-align: center;
-  background-color: white;
+  	padding: 1rem 1.5rem;
+  	text-align: center;
+  	background-color: white;
 }
-
-/*
-h1{
-    color: black;
-}
-
-
-h2{
-    color:#FF0000;
-}
-
-.colorA {
-	color: blueviolet;
-	font-weight: bold;
-}*/
 
 table, th, td {
-  border: 1px solid black;
+  	border: 1px solid black;
+}
+
+#rollResult {
+  	text-align: center;
+	font-size: xxx-large;
 }
